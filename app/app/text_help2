@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Main</title>
+</head>
+<body>
+    <h1>IT-School</h1>
+
+
+    <li><a class="link" href="{{ url_for('group') }}" id="group">Groups</a></li><br>
+
+    <li><a class="link" href="{{ url_for('add_student') }}" id="add_student">Add student</a></li><br>
+    {% if current_user.is_authenticated %}
+    <li><a class="link" href="{{ url_for('logout') }}" id="logout">Log out</a></li><br>
+    {% else %}
+
+    <li><a class="link" href="{{ url_for('login') }}" id="log_in">Log in</a></li><br>
+    {% endif %}
+
+{%block content%}
+{% endblock %}
+
+</body>
+</html>
